@@ -63,8 +63,12 @@
           </div>
 
           <div class="btn-group">
-            <div class="btn">View my CV</div>
-            <div class="btn">Contact</div>
+            <a href="Tshepo_Mohlophehi_CV.pdf" target="_blank">
+              <div class="btn">View my CV</div>
+            </a>
+            <a href="#contact">
+              <div class="btn">Contact</div>
+            </a>
           </div>
 
           <div class="socials">
@@ -175,12 +179,11 @@
     <section class="contact" id="contact">
       <div class="input-box">
         <h1 class="section-title">Contact Me</h1>
-
-        <div class="input">
-          <input type="text" placeholder="example@email.com" />
-          <i class="fa-solid fa-envelope"></i>
-        </div>
-
+        
+        <form action="https://formspree.io/your-email" method="POST">
+          <input type="email" name="_replyto" placeholder="example@email.com" required />
+          <button type="submit" class="btn">Submit</button>
+        </form>
         <div class="btn">Submit</div>
       </div>
     </section>
