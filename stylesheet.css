@@ -336,6 +336,13 @@ section {
 }
 
 /* Contact Section Code */
+.section-title {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: black;
+}
 .contact {
     background-color: black;
     color: #fff;
