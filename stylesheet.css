@@ -338,56 +338,70 @@ section {
 /* Contact Section Code */
 .contact {
     background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 40px;
 }
 
 .contact h1 {
     color: #f0ffff;
+    margin-bottom: 20px;
 }
-.input-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-    margin-top: 5rem;
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
-.input-box input {
-    border-radius: 3rem;
-    border: 2px solid white;
-    padding: 2rem 8rem;
-    font-size: 3rem;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
 }
 
-.input-box input::placeholder {
-    font-size: 3rem;
+.contact-item i {
+  font-size: 1.5em;
+  color: #1db954; /* WhatsApp green for WhatsApp icon, adjust others as needed */
 }
 
-.input {
-    position: relative;
+.contact-item a {
+  color: #fff;
+  text-decoration: none;
 }
 
-.input i{
-    position: absolute;
-    font-size: 3rem;
-    top: 50%;
-    left: 10px;
-    transform: translate(50%,-50%);
+.contact-item a:hover {
+  text-decoration: underline;
 }
+
 
 /* Footer Section Code */
 
 footer {
+    background-color: rgb(94, 94, 212);
     bottom: 0;
     left: 0;
-    height: 10rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    text-align: center;
     align-items: center;
     justify-content: center;
+}
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 2em;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #0077b5;
 }
 
 footer ul {
@@ -509,31 +523,6 @@ footer ul li a {
     footer ul {
         gap: 1rem;
     }
-}
-
-footer {
-    background-color: rgb(94, 94, 212);
-}
-
-#contact-me {
-  text-align: center;
-  margin: 40px 0;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  justify-items: center;
-}
-
-.contact-grid div {
-  padding: 10px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 20px;
 }
 
 .social-icons {
