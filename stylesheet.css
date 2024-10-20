@@ -336,12 +336,12 @@ section {
 }
 
 /* Contact Section Code */
-.section-title {
+.section-title-contact {
     text-align: center;
     font-size: 4rem;
     font-weight: 600;
     margin-bottom: 3rem;
-    color: black;
+    color: white;
 }
 .contact {
     background-color: black;
