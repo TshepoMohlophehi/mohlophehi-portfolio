@@ -115,6 +115,21 @@ body {
    ============================================= */
 .fira { font-family:'Fira Code',monospace; }
 .comment-sym { color:var(--text-faint); }
+.skip-link {
+  position:absolute;
+  top:-48px;
+  left:1rem;
+  z-index:10001;
+  padding:.75rem 1rem;
+  border-radius:.75rem;
+  background:var(--bg-3);
+  color:var(--text);
+  border:1px solid var(--border-hover);
+  transition:top .2s ease;
+}
+.skip-link:focus {
+  top:1rem;
+}
 
 /* =============================================
    REVEAL ANIMATIONS
@@ -195,6 +210,7 @@ body {
 [data-theme="light"] .toggle-thumb { transform:translateX(22px); }
 
 .visit-btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:.4rem;
   padding:.5rem 1.2rem; border-radius:99px; border:1.5px solid var(--border-hover);
   background:transparent; font-family:'Plus Jakarta Sans',sans-serif; font-weight:600;
   font-size:.82rem; color:var(--text); cursor:pointer; white-space:nowrap; transition:all .25s;
@@ -399,11 +415,21 @@ body {
 
 .blog-card {
   background:var(--surface); border:1px solid var(--border); border-radius:1.4rem;
-  overflow:hidden; display:flex; flex-direction:column; cursor:pointer;
+  overflow:hidden; display:flex; flex-direction:column;
   transition:all .32s cubic-bezier(.4,0,.2,1); position:relative;
 }
-.blog-card:hover { border-color:var(--border-hover); transform:translateY(-6px); box-shadow:var(--shadow-card); }
-.blog-card:focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
+.blog-card:hover,
+.blog-card:focus-within { border-color:var(--border-hover); transform:translateY(-6px); box-shadow:var(--shadow-card); }
+.blog-card-link {
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  color:inherit;
+}
+.blog-card-link:focus-visible {
+  outline:2px solid var(--cyan);
+  outline-offset:3px;
+}
 
 .blog-img-wrap { position:relative; }
 .blog-cover {
@@ -426,14 +452,19 @@ body {
 .blog-content { padding:1.4rem; display:flex; flex-direction:column; gap:.7rem; flex:1; }
 .blog-meta { display:flex; gap:1rem; }
 .blog-date,.blog-read { font-size:.74rem; color:var(--text-muted); display:flex; align-items:center; gap:.35rem; }
+.blog-content h2,
 .blog-content h3 { font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:700; color:var(--text); line-height:1.4; transition:color .25s; }
-.blog-card:hover .blog-content h3 { color:var(--cyan); }
+.blog-card:hover .blog-content h2,
+.blog-card:hover .blog-content h3,
+.blog-card:focus-within .blog-content h2,
+.blog-card:focus-within .blog-content h3 { color:var(--cyan); }
 .blog-content p { font-size:.82rem; color:var(--text-muted); line-height:1.65; font-weight:300; }
 .blog-footer { display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:.6rem; }
 .blog-tags { display:flex; gap:.35rem; }
 .blog-tags span { font-family:'Fira Code',monospace; font-size:.65rem; padding:.15rem .55rem; border-radius:99px; background:var(--surface-2); color:var(--text-muted); border:1px solid var(--border); }
 .blog-arrow { width:30px; height:30px; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:.78rem; color:var(--text-muted); transition:all .25s; }
-.blog-card:hover .blog-arrow { background:var(--grad); border-color:transparent; color:#fff; transform:translateX(3px); }
+.blog-card:hover .blog-arrow,
+.blog-card:focus-within .blog-arrow { background:var(--grad); border-color:transparent; color:#fff; transform:translateX(3px); }
 
 /* =============================================
    CONTACT
@@ -630,8 +661,7 @@ footer { background:var(--bg-2); border-top:1px solid var(--border); padding:2.8
   .stats-row { gap:1.2rem; }
   .stat-number { font-size:1.5rem; }
   .btn-group { flex-direction:column; width:100%; }
-  .btn-group .btn,.btn-group a { width:100%; display:block; }
-  .btn-group a .btn { width:100%; }
+  .btn-group .btn,.btn-group a { width:100%; }
   .form-container { padding:1.6rem; }
   .modal-box { padding:2rem 1.6rem; border-radius:1.5rem; }
 }

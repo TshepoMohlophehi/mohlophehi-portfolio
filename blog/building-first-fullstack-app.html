@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building My First Full Stack App with Node.js &amp; React | Tshepo Mohlophehi</title>
+    <meta name="description" content="Lessons from building a first full stack app with React, Node.js, and Express, from architecture choices to debugging and iteration." />
+    <meta name="author" content="Tshepo Mohlophehi" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://tshepomohlophehi.co.za/blog/building-first-fullstack-app.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Tshepo Mohlophehi Portfolio" />
+    <meta property="og:url" content="https://tshepomohlophehi.co.za/blog/building-first-fullstack-app.html" />
+    <meta property="og:title" content="Building My First Full Stack App with Node.js &amp; React" />
+    <meta property="og:description" content="What I learned while moving from standalone projects to a real full stack workflow with a frontend, backend, and API in between." />
+    <meta property="og:image" content="https://tshepomohlophehi.co.za/assets/images/ProfileImage3.jpg" />
+    <meta property="og:image:alt" content="Portrait of Tshepo Mohlophehi" />
+    <meta property="og:locale" content="en_ZA" />
+    <meta property="article:section" content="Development" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Building My First Full Stack App with Node.js &amp; React" />
+    <meta name="twitter:description" content="A practical reflection on building a first full stack app with React, Node.js, and Express." />
+    <meta name="twitter:image" content="https://tshepomohlophehi.co.za/assets/images/ProfileImage3.jpg" />
+    <meta name="twitter:image:alt" content="Portrait of Tshepo Mohlophehi" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://tshepomohlophehi.co.za/blog/building-first-fullstack-app.html#post",
+            "headline": "Building My First Full Stack App with Node.js & React",
+            "description": "Lessons from building a first full stack app with React, Node.js, and Express, from architecture choices to debugging and iteration.",
+            "author": {
+              "@type": "Person",
+              "name": "Tshepo Mohlophehi",
+              "url": "https://tshepomohlophehi.co.za/"
+            },
+            "url": "https://tshepomohlophehi.co.za/blog/building-first-fullstack-app.html",
+            "mainEntityOfPage": "https://tshepomohlophehi.co.za/blog/building-first-fullstack-app.html",
+            "articleSection": "Development",
+            "keywords": [
+              "React",
+              "Node.js",
+              "Express",
+              "Full stack development",
+              "JavaScript"
+            ],
+            "inLanguage": "en-ZA",
+            "isPartOf": {
+              "@type": "Blog",
+              "name": "Tshepo Mohlophehi Blog",
+              "url": "https://tshepomohlophehi.co.za/blog.html"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tshepomohlophehi.co.za/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://tshepomohlophehi.co.za/blog.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Building My First Full Stack App with Node.js & React",
+                "item": "https://tshepomohlophehi.co.za/blog/building-first-fullstack-app.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" />
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#0b1020" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/styles/stylesheet.css" />
+    <link rel="stylesheet" href="../assets/styles/article.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <header class="header" id="mainHeader">
+      <a href="../index.html" class="logo"><span>TM.</span></a>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../blog.html" class="active" aria-current="page">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="toggle-track"><span class="toggle-thumb"><i class="fa-solid fa-moon" id="themeIcon"></i></span></span>
+        </button>
+        <a href="https://github.com/TshepoMohlophehi" target="_blank" rel="noopener" class="visit-btn">GitHub &nbsp;<i class="fa-brands fa-github"></i></a>
+        <button class="hamburger" id="menuIcon" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <header class="post-page-hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1" style="top: -120px; left: -120px;"></div>
+        <div class="orb orb-2" style="right: -100px; bottom: -100px;"></div>
+        <div class="grid-overlay"></div>
+      </div>
+      <div class="post-hero-content">
+        <div class="post-meta fira">
+          <span><i class="fa-regular fa-calendar"></i> <time datetime="2024-12">Dec 2024</time></span>
+          <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+          <span><i class="fa-solid fa-layer-group"></i> Development</span>
+        </div>
+        <h1 class="post-title">Building My First Full Stack App with Node.js &amp; React</h1>
+        <p class="post-dek">
+          Moving from isolated frontend projects to a real full stack app changed how I think about software. It was less about learning one more framework and more about understanding how multiple layers agree on data, state, and responsibility.
+        </p>
+      </div>
+    </header>
+
+    <main class="post-main" id="main-content">
+      <a class="back-link" href="../blog.html"><i class="fa-solid fa-arrow-left"></i> Back to all posts</a>
+
+      <div class="post-grid">
+        <article class="post-content">
+          <div class="tag-list">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>REST APIs</span>
+          </div>
+
+          <div class="prose">
+            <h2>Why this project felt different</h2>
+            <p>
+              My earlier projects taught me a lot about layout, interactivity, and browser-side JavaScript, but a full stack app introduced a different kind of complexity. Instead of managing one interface, I had to think about a frontend, a backend, routing, data flow, and the contract between them. That shift made the work feel much closer to building a real product.
+            </p>
+            <p>
+              React handled the user experience, but Node.js and Express gave me a place to organize logic, shape responses, and think about how data should move through the app. Once both sides were connected, even small mistakes became more visible. A field name mismatch, an unexpected response shape, or one missing error check could break the whole flow.
+            </p>
+
+            <div class="callout">
+              <strong>The biggest lesson:</strong> full stack development is not just frontend plus backend. It is the discipline of keeping those layers in sync.
+            </div>
+
+            <h2>What challenged me most</h2>
+            <p>
+              The hardest part was not writing components or spinning up a server. It was debugging the moments where everything looked correct in isolation but failed when connected together. Requests had to leave the client with the right payload, land on the right route, pass validation, and return data in a format the UI actually expected. When any part of that chain drifted, it created confusing bugs.
+            </p>
+            <p>
+              I also learned that state becomes more important once data is no longer hard-coded in the frontend. Loading states, empty states, error handling, and success feedback all become part of the product experience. An app can be technically connected and still feel broken if the user is left guessing what is happening.
+            </p>
+
+            <h2>Architecture matters earlier than I expected</h2>
+            <p>
+              Even on a small project, folder structure and naming conventions started paying off quickly. Clear separation between components, API helpers, and server routes made it easier to reason about the app and easier to return to the code later. The more predictable the structure became, the less time I lost searching for where a problem was coming from.
+            </p>
+            <p>
+              On the backend, I started appreciating how useful it is to keep route handlers small and to isolate repeated logic. On the frontend, I saw the value of breaking a large view into focused components instead of allowing one file to grow into a tangle of state and event handling.
+            </p>
+
+            <h2>What I would do differently next time</h2>
+            <p>
+              If I were starting the same app again, I would spend more time upfront on the shape of the data and the responsibilities of each screen. I would define the API responses earlier, document them in plain language, and keep a small checklist of user flows before building UI details. That would have saved time later when debugging integration issues.
+            </p>
+            <p>
+              I would also add validation and better error messaging much sooner. During a first full stack build, it is tempting to focus on the happy path because it feels like faster progress. In practice, the unhappy path teaches more and makes the app stronger. Good validation, clearer responses, and deliberate feedback loops make development smoother on both the client and the server.
+            </p>
+
+            <h2>Why I still value the experience</h2>
+            <p>
+              Building that first full stack app made me more patient and more precise. It taught me to think beyond screens and to care about how systems talk to each other. It also gave me a stronger appreciation for simple, dependable code. When multiple layers depend on one another, clarity becomes a feature.
+            </p>
+            <p>
+              Most importantly, it made future projects feel less intimidating. Once you have worked through the friction of connecting a frontend, a backend, and an API, the process stops feeling mysterious. You begin to see it as a set of solvable problems, and that mindset is one of the most valuable things a first full stack project can give you.
+            </p>
+
+            <div class="post-footer-links">
+              <a href="../index.html#projects"><i class="fa-solid fa-arrow-right"></i> Explore more projects</a>
+              <a href="../index.html#contact"><i class="fa-regular fa-envelope"></i> Get in touch</a>
+            </div>
+          </div>
+        </article>
+
+        <aside class="post-sidebar">
+          <div class="post-card">
+            <h2>In this post</h2>
+            <ul>
+              <li>Why a full stack app feels different from frontend-only work</li>
+              <li>What broke most often during integration</li>
+              <li>How architecture started to matter</li>
+              <li>What I would change next time</li>
+            </ul>
+          </div>
+
+          <div class="post-card">
+            <h2>Keep reading</h2>
+            <p>More thoughts on learning and building:</p>
+            <div class="post-actions">
+              <a href="year-of-coding.html">What I've Learned After a Year of Coding Seriously</a>
+              <a href="understanding-rest-apis.html">Understanding REST APIs: A Practical Developer's Guide</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">Tshepo Mohlophehi<span class="dot-accent">.</span></a>
+        <ul class="footer-nav">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <p class="copyright"><script>document.write(new Date().getFullYear());</script> &copy; Tshepo Mohlophehi</p>
+      </div>
+    </footer>
+
+    <script>
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const html = document.documentElement;
+
+      function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        localStorage.setItem("tm-theme", theme);
+        themeIcon.className = theme === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+      }
+
+      const savedTheme = localStorage.getItem("tm-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(savedTheme);
+      themeToggle?.addEventListener("click", () => {
+        applyTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      });
+
+      const menuIcon = document.getElementById("menuIcon");
+      const navLinks = document.getElementById("navLinks");
+      const navBackdrop = document.getElementById("navBackdrop");
+
+      function closeNav() {
+        navLinks?.classList.remove("active");
+        navBackdrop?.classList.remove("active");
+        menuIcon?.classList.remove("open");
+        menuIcon?.setAttribute("aria-expanded", "false");
+      }
+
+      menuIcon?.addEventListener("click", () => {
+        const isOpen = navLinks?.classList.contains("active");
+        if (isOpen) {
+          closeNav();
+        } else {
+          navLinks?.classList.add("active");
+          navBackdrop?.classList.add("active");
+          menuIcon?.classList.add("open");
+          menuIcon?.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      navBackdrop?.addEventListener("click", closeNav);
+      window.addEventListener("scroll", closeNav, { passive: true });
+
+      const header = document.getElementById("mainHeader");
+      window.addEventListener("scroll", () => {
+        header?.classList.toggle("scrolled", window.scrollY > 60);
+      }, { passive: true });
+
+      const scrollProgress = document.getElementById("scrollProgress");
+      window.addEventListener("scroll", () => {
+        const scrolled = document.documentElement.scrollTop;
+        const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (scrollProgress) {
+          scrollProgress.style.width = (scrolled / total * 100) + "%";
+        }
+      }, { passive: true });
+
+      const cursor = document.getElementById("cursor");
+      const follower = document.getElementById("cursorFollower");
+      if (cursor && follower && !window.matchMedia("(max-width:900px)").matches) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        document.addEventListener("mousemove", (event) => {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+          cursor.style.left = mouseX + "px";
+          cursor.style.top = mouseY + "px";
+        });
+
+        (function animateFollower() {
+          followerX += (mouseX - followerX) * 0.13;
+          followerY += (mouseY - followerY) * 0.13;
+          follower.style.left = followerX + "px";
+          follower.style.top = followerY + "px";
+          requestAnimationFrame(animateFollower);
+        })();
+      }
+    </script>
+  </body>
+</html>

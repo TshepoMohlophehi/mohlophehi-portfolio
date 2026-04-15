@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What I've Learned After a Year of Coding Seriously | Tshepo Mohlophehi</title>
+    <meta name="description" content="Reflections on consistency, debugging, deliberate practice, and growth after a year of taking coding seriously." />
+    <meta name="author" content="Tshepo Mohlophehi" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://tshepomohlophehi.co.za/blog/year-of-coding.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Tshepo Mohlophehi Portfolio" />
+    <meta property="og:url" content="https://tshepomohlophehi.co.za/blog/year-of-coding.html" />
+    <meta property="og:title" content="What I've Learned After a Year of Coding Seriously" />
+    <meta property="og:description" content="A reflection on habits, frustration, patience, and deliberate practice after a year of focused learning." />
+    <meta property="og:image" content="https://tshepomohlophehi.co.za/assets/images/ProfileImage3.jpg" />
+    <meta property="og:image:alt" content="Portrait of Tshepo Mohlophehi" />
+    <meta property="og:locale" content="en_ZA" />
+    <meta property="article:section" content="Personal" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What I've Learned After a Year of Coding Seriously" />
+    <meta name="twitter:description" content="Lessons on consistency, patience, and building real projects after a year of serious coding practice." />
+    <meta name="twitter:image" content="https://tshepomohlophehi.co.za/assets/images/ProfileImage3.jpg" />
+    <meta name="twitter:image:alt" content="Portrait of Tshepo Mohlophehi" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://tshepomohlophehi.co.za/blog/year-of-coding.html#post",
+            "headline": "What I've Learned After a Year of Coding Seriously",
+            "description": "Reflections on consistency, debugging, deliberate practice, and growth after a year of taking coding seriously.",
+            "author": {
+              "@type": "Person",
+              "name": "Tshepo Mohlophehi",
+              "url": "https://tshepomohlophehi.co.za/"
+            },
+            "url": "https://tshepomohlophehi.co.za/blog/year-of-coding.html",
+            "mainEntityOfPage": "https://tshepomohlophehi.co.za/blog/year-of-coding.html",
+            "articleSection": "Personal",
+            "keywords": [
+              "Learning to code",
+              "Developer growth",
+              "Deliberate practice",
+              "Programming habits"
+            ],
+            "inLanguage": "en-ZA",
+            "isPartOf": {
+              "@type": "Blog",
+              "name": "Tshepo Mohlophehi Blog",
+              "url": "https://tshepomohlophehi.co.za/blog.html"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tshepomohlophehi.co.za/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://tshepomohlophehi.co.za/blog.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "What I've Learned After a Year of Coding Seriously",
+                "item": "https://tshepomohlophehi.co.za/blog/year-of-coding.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" />
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#0b1020" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/styles/stylesheet.css" />
+    <link rel="stylesheet" href="../assets/styles/article.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <header class="header" id="mainHeader">
+      <a href="../index.html" class="logo"><span>TM.</span></a>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../blog.html" class="active" aria-current="page">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="toggle-track"><span class="toggle-thumb"><i class="fa-solid fa-moon" id="themeIcon"></i></span></span>
+        </button>
+        <a href="https://github.com/TshepoMohlophehi" target="_blank" rel="noopener" class="visit-btn">GitHub &nbsp;<i class="fa-brands fa-github"></i></a>
+        <button class="hamburger" id="menuIcon" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <header class="post-page-hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1" style="top: -120px; left: -120px;"></div>
+        <div class="orb orb-2" style="right: -100px; bottom: -100px;"></div>
+        <div class="grid-overlay"></div>
+      </div>
+      <div class="post-hero-content">
+        <div class="post-meta fira">
+          <span><i class="fa-regular fa-calendar"></i> <time datetime="2024-11">Nov 2024</time></span>
+          <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+          <span><i class="fa-regular fa-heart"></i> Personal</span>
+        </div>
+        <h1 class="post-title">What I've Learned After a Year of Coding Seriously</h1>
+        <p class="post-dek">
+          A year of focused coding did not make everything easy, but it changed how I approach learning. The biggest progress came from consistency, patience, and the willingness to stay with problems longer than my comfort zone wanted.
+        </p>
+      </div>
+    </header>
+
+    <main class="post-main" id="main-content">
+      <a class="back-link" href="../blog.html"><i class="fa-solid fa-arrow-left"></i> Back to all posts</a>
+
+      <div class="post-grid">
+        <article class="post-content">
+          <div class="tag-list">
+            <span>Growth</span>
+            <span>Habits</span>
+            <span>Learning</span>
+            <span>Mindset</span>
+          </div>
+
+          <div class="prose">
+            <h2>Consistency matters more than motivation</h2>
+            <p>
+              Early on, I thought progress would come from long bursts of inspiration. What actually helped was showing up regularly, even when I was tired, confused, or not especially excited. Small, repeatable sessions built momentum in a way that intense but unpredictable effort never could.
+            </p>
+            <p>
+              Coding rewards repetition because so much of the craft depends on familiarity. The more often I read code, wrote code, and fixed code, the less intimidating new problems felt. I still had hard days, but they stopped feeling like proof that I was not improving.
+            </p>
+
+            <div class="callout">
+              <strong>One of the clearest lessons:</strong> motivation gets you started, but routine is what carries you through the slow middle where real growth happens.
+            </div>
+
+            <h2>Tutorials helped, but building taught more</h2>
+            <p>
+              Tutorials were useful when I needed a first look at a new tool or concept, but they only took me so far. Real understanding started when I tried building something without a step-by-step guide. That was the point where gaps in my knowledge became visible and I had to make decisions for myself.
+            </p>
+            <p>
+              Projects forced me to think about structure, naming, edge cases, and user experience. They also exposed how much easier it is to follow a solution than to create one. That difference was uncomfortable, but it was also where the most valuable learning happened.
+            </p>
+
+            <h2>Debugging is not a detour from learning</h2>
+            <p>
+              For a while I treated bugs like interruptions, something standing between me and the part where I got to build. After spending more time with real projects, I started seeing debugging as one of the core ways developers learn. It trains patience, observation, and the ability to test assumptions instead of trusting them.
+            </p>
+            <p>
+              Some of my best learning came from tracing a bug carefully, reading error messages slowly, and isolating one possible cause at a time. That process did more for my confidence than a perfect tutorial ever could, because it showed me I could work through uncertainty without needing immediate answers.
+            </p>
+
+            <h2>Small projects compound over time</h2>
+            <p>
+              Not every project needs to be ambitious to be valuable. Smaller builds gave me a chance to practice one idea clearly, finish something, and move on with a stronger mental model. Over time, those smaller wins stacked into better instincts around structure, styling, state, and API thinking.
+            </p>
+            <p>
+              They also made my portfolio stronger because each project captured a different stage of growth. Looking back at earlier work showed me something important: progress is often easier to see in hindsight than in the middle of the struggle.
+            </p>
+
+            <h2>Learning in public helped me take ownership</h2>
+            <p>
+              Sharing work, even when it felt unfinished, made the journey feel more real. It pushed me to explain decisions, name technologies accurately, and care about the presentation of what I built. Publishing a project or writing about what I learned also turned private effort into something concrete.
+            </p>
+            <p>
+              After a year of coding seriously, I still feel like a learner, but the difference is that I now trust the process more. I know that confusion is temporary, that good habits matter, and that steady work compounds. That has been one of the most encouraging lessons of all.
+            </p>
+
+            <div class="post-footer-links">
+              <a href="../index.html#projects"><i class="fa-solid fa-arrow-right"></i> View portfolio projects</a>
+              <a href="../index.html#contact"><i class="fa-regular fa-envelope"></i> Start a conversation</a>
+            </div>
+          </div>
+        </article>
+
+        <aside class="post-sidebar">
+          <div class="post-card">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li>Consistency beats waiting for perfect motivation</li>
+              <li>Projects teach more than passive watching</li>
+              <li>Debugging is part of the craft</li>
+              <li>Small wins add up over time</li>
+            </ul>
+          </div>
+
+          <div class="post-card">
+            <h2>Keep reading</h2>
+            <p>Related posts from the blog:</p>
+            <div class="post-actions">
+              <a href="building-first-fullstack-app.html">Building My First Full Stack App with Node.js &amp; React</a>
+              <a href="understanding-rest-apis.html">Understanding REST APIs: A Practical Developer's Guide</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">Tshepo Mohlophehi<span class="dot-accent">.</span></a>
+        <ul class="footer-nav">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <p class="copyright"><script>document.write(new Date().getFullYear());</script> &copy; Tshepo Mohlophehi</p>
+      </div>
+    </footer>
+
+    <script>
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const html = document.documentElement;
+
+      function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        localStorage.setItem("tm-theme", theme);
+        themeIcon.className = theme === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+      }
+
+      const savedTheme = localStorage.getItem("tm-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(savedTheme);
+      themeToggle?.addEventListener("click", () => {
+        applyTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      });
+
+      const menuIcon = document.getElementById("menuIcon");
+      const navLinks = document.getElementById("navLinks");
+      const navBackdrop = document.getElementById("navBackdrop");
+
+      function closeNav() {
+        navLinks?.classList.remove("active");
+        navBackdrop?.classList.remove("active");
+        menuIcon?.classList.remove("open");
+        menuIcon?.setAttribute("aria-expanded", "false");
+      }
+
+      menuIcon?.addEventListener("click", () => {
+        const isOpen = navLinks?.classList.contains("active");
+        if (isOpen) {
+          closeNav();
+        } else {
+          navLinks?.classList.add("active");
+          navBackdrop?.classList.add("active");
+          menuIcon?.classList.add("open");
+          menuIcon?.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      navBackdrop?.addEventListener("click", closeNav);
+      window.addEventListener("scroll", closeNav, { passive: true });
+
+      const header = document.getElementById("mainHeader");
+      window.addEventListener("scroll", () => {
+        header?.classList.toggle("scrolled", window.scrollY > 60);
+      }, { passive: true });
+
+      const scrollProgress = document.getElementById("scrollProgress");
+      window.addEventListener("scroll", () => {
+        const scrolled = document.documentElement.scrollTop;
+        const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (scrollProgress) {
+          scrollProgress.style.width = (scrolled / total * 100) + "%";
+        }
+      }, { passive: true });
+
+      const cursor = document.getElementById("cursor");
+      const follower = document.getElementById("cursorFollower");
+      if (cursor && follower && !window.matchMedia("(max-width:900px)").matches) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        document.addEventListener("mousemove", (event) => {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+          cursor.style.left = mouseX + "px";
+          cursor.style.top = mouseY + "px";
+        });
+
+        (function animateFollower() {
+          followerX += (mouseX - followerX) * 0.13;
+          followerY += (mouseY - followerY) * 0.13;
+          follower.style.left = followerX + "px";
+          follower.style.top = followerY + "px";
+          requestAnimationFrame(animateFollower);
+        })();
+      }
+    </script>
+  </body>
+</html>

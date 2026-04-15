@@ -1,1 +1,23 @@
-{"name":"Tshepo Mohlophehi","short_name":"TM Portfolio","icons":[{"src":"android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#0b1020","background_color":"#0b1020","display":"standalone"}
+{
+  "name": "Tshepo Mohlophehi Portfolio",
+  "short_name": "TM Portfolio",
+  "description": "Portfolio and blog for Tshepo Mohlophehi, a full stack developer based in South Africa.",
+  "lang": "en-ZA",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

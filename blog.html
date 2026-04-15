@@ -3,73 +3,228 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog — Tshepo Mohlophehi</title>
-    <meta name="description" content="Thoughts, tutorials, and personal reflections from Tshepo Mohlophehi — Full Stack Developer from South Africa." />
-    <link rel="icon" type="image/x-icon" href="assets/images/tabImage.ico" />
+    <title>Blog | Tshepo Mohlophehi</title>
+    <meta name="description" content="Read development notes, tutorials, and personal reflections from Tshepo Mohlophehi on React, Node.js, REST APIs, and growth as a developer." />
+    <meta name="author" content="Tshepo Mohlophehi" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://tshepomohlophehi.co.za/blog.html" />
+    <link rel="alternate" hreflang="en-ZA" href="https://tshepomohlophehi.co.za/blog.html" />
+    <link rel="alternate" hreflang="x-default" href="https://tshepomohlophehi.co.za/blog.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tshepo Mohlophehi Portfolio" />
+    <meta property="og:url" content="https://tshepomohlophehi.co.za/blog.html" />
+    <meta property="og:title" content="Blog | Tshepo Mohlophehi" />
+    <meta property="og:description" content="Articles on full stack development, REST APIs, and personal growth as a developer by Tshepo Mohlophehi." />
+    <meta property="og:image" content="https://tshepomohlophehi.co.za/assets/images/ProfileImage3.jpg" />
+    <meta property="og:image:alt" content="Portrait of Tshepo Mohlophehi" />
+    <meta property="og:locale" content="en_ZA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog | Tshepo Mohlophehi" />
+    <meta name="twitter:description" content="Development tutorials, lessons learned, and practical notes from Tshepo Mohlophehi." />
+    <meta name="twitter:image" content="https://tshepomohlophehi.co.za/assets/images/ProfileImage3.jpg" />
+    <meta name="twitter:image:alt" content="Portrait of Tshepo Mohlophehi" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://tshepomohlophehi.co.za/blog.html#collection",
+            "url": "https://tshepomohlophehi.co.za/blog.html",
+            "name": "Blog | Tshepo Mohlophehi",
+            "description": "A collection of articles on web development, APIs, and personal growth as a developer.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Tshepo Mohlophehi Portfolio",
+              "url": "https://tshepomohlophehi.co.za/"
+            },
+            "about": {
+              "@type": "Person",
+              "name": "Tshepo Mohlophehi",
+              "url": "https://tshepomohlophehi.co.za/"
+            },
+            "inLanguage": "en-ZA"
+          },
+          {
+            "@type": "ItemList",
+            "name": "Blog posts by Tshepo Mohlophehi",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "url": "https://tshepomohlophehi.co.za/blog/building-first-fullstack-app.html",
+                "name": "Building My First Full Stack App with Node.js & React"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "url": "https://tshepomohlophehi.co.za/blog/year-of-coding.html",
+                "name": "What I've Learned After a Year of Coding Seriously"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "url": "https://tshepomohlophehi.co.za/blog/understanding-rest-apis.html",
+                "name": "Understanding REST APIs: A Practical Developer's Guide"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#0b1020" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="assets/styles/stylesheet.css" />
     <style>
-      /* Blog page specific styles */
       .blog-page-hero {
-        min-height:40vh; display:flex; align-items:center; justify-content:center;
-        padding:9rem 7% 4rem; background:var(--bg-2); position:relative; overflow:hidden; text-align:center;
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 9rem 7% 4rem;
+        background: var(--bg-2);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
       }
-      .blog-page-hero .hero-bg { position:absolute; inset:0; z-index:0; pointer-events:none; }
-      .blog-page-hero .orb-1 { width:350px;height:350px; opacity:.1; }
-      .blog-page-hero .orb-2 { width:280px;height:280px; opacity:.09; }
-      .blog-hero-content { position:relative; z-index:1; }
-      .blog-hero-content .section-tag { display:block; margin-bottom:1rem; }
-      .blog-hero-title { font-family:'Syne',sans-serif; font-size:clamp(2.5rem,6vw,4.5rem); font-weight:800; letter-spacing:-.03em; background:var(--grad-90); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:1rem; }
-      .blog-hero-sub { color:var(--text-muted); font-size:1rem; font-weight:300; max-width:500px; margin:0 auto; line-height:1.75; }
-
-      .blog-main { padding:5rem 7% 7rem; background:var(--bg); }
-      .blog-filters { display:flex; gap:.7rem; flex-wrap:wrap; margin-bottom:3rem; }
+      .blog-page-hero .hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+      .blog-page-hero .orb-1 { width: 350px; height: 350px; opacity: .1; }
+      .blog-page-hero .orb-2 { width: 280px; height: 280px; opacity: .09; }
+      .blog-hero-content { position: relative; z-index: 1; }
+      .blog-hero-content .section-tag { display: block; margin-bottom: 1rem; }
+      .blog-hero-title {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 800;
+        letter-spacing: -.03em;
+        background: var(--grad-90);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 1rem;
+      }
+      .blog-hero-sub {
+        color: var(--text-muted);
+        font-size: 1rem;
+        font-weight: 300;
+        max-width: 620px;
+        margin: 0 auto;
+        line-height: 1.75;
+      }
+      .blog-main { padding: 5rem 7% 7rem; background: var(--bg); }
+      .blog-back {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        color: var(--text-muted);
+        font-size: .88rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        transition: color .22s;
+      }
+      .blog-back:hover { color: var(--cyan); }
+      .blog-back i { transition: transform .22s; }
+      .blog-back:hover i { transform: translateX(-3px); }
+      .blog-lede {
+        max-width: 760px;
+        margin: 0 0 2rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+      }
+      .blog-filters { display: flex; gap: .7rem; flex-wrap: wrap; margin-bottom: 3rem; }
       .filter-btn {
-        padding:.45rem 1.15rem; border-radius:99px; border:1.5px solid var(--border);
-        background:transparent; color:var(--text-muted); font-family:'Plus Jakarta Sans',sans-serif;
-        font-size:.82rem; font-weight:600; cursor:pointer; transition:all .25s;
+        padding: .45rem 1.15rem;
+        border-radius: 99px;
+        border: 1.5px solid var(--border);
+        background: transparent;
+        color: var(--text-muted);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: .82rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .25s;
       }
-      .filter-btn:hover,.filter-btn.active { background:var(--grad); border-color:transparent; color:#fff; }
-
-      .blog-full-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.8rem; max-width:1200px; margin:0 auto; }
-
-      /* Featured post — spans 2 cols on wide screens */
-      .blog-card.featured { grid-column: span 2; display:grid; grid-template-columns:1fr 1fr; }
-      .blog-card.featured .blog-img-wrap .blog-cover { height:100%; min-height:220px; }
-      @media(max-width:700px){ .blog-card.featured { grid-column:span 1; display:flex; flex-direction:column; } .blog-card.featured .blog-img-wrap .blog-cover { min-height:160px; } }
-
-      .blog-back { display:inline-flex; align-items:center; gap:.5rem; color:var(--text-muted); font-size:.88rem; font-weight:500; margin-bottom:2rem; transition:color .22s; cursor:pointer; background:none; border:none; padding:0; }
-      .blog-back:hover { color:var(--cyan); }
-      .blog-back i { transition:transform .22s; }
-      .blog-back:hover i { transform:translateX(-3px); }
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--grad);
+        border-color: transparent;
+        color: #fff;
+      }
+      .blog-full-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.8rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .blog-card.featured {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .blog-card.featured .blog-card-link {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+      }
+      .blog-card.featured .blog-img-wrap .blog-cover {
+        height: 100%;
+        min-height: 220px;
+      }
+      .blog-note {
+        margin-top: 2.5rem;
+        color: var(--text-muted);
+        text-align: center;
+      }
+      @media (max-width: 700px) {
+        .blog-card.featured {
+          grid-column: span 1;
+          display: flex;
+          flex-direction: column;
+        }
+        .blog-card.featured .blog-card-link {
+          display: flex;
+          flex-direction: column;
+        }
+        .blog-card.featured .blog-img-wrap .blog-cover {
+          min-height: 160px;
+        }
+      }
     </style>
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="scroll-progress" id="scrollProgress"></div>
     <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursorFollower"></div>
 
-    <!-- Header -->
     <header class="header" id="mainHeader">
       <a href="index.html" class="logo"><span>TM.</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
       <div class="header-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="toggle-track"><span class="toggle-thumb"><i class="fa-solid fa-moon" id="themeIcon"></i></span></span>
         </button>
-        <a href="https://github.com/TshepoMohlophehi" target="_blank" rel="noopener">
-          <button class="visit-btn">GitHub &nbsp;<i class="fa-brands fa-github"></i></button>
-        </a>
+        <a href="https://github.com/TshepoMohlophehi" target="_blank" rel="noopener" class="visit-btn">GitHub &nbsp;<i class="fa-brands fa-github"></i></a>
         <button class="hamburger" id="menuIcon" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -77,105 +232,100 @@
     </header>
     <div class="nav-backdrop" id="navBackdrop"></div>
 
-    <!-- Hero -->
-    <div class="blog-page-hero">
+    <header class="blog-page-hero">
       <div class="hero-bg">
-        <div class="orb orb-1" style="top:-100px;left:-100px;"></div>
-        <div class="orb orb-2" style="bottom:-80px;right:-80px;"></div>
+        <div class="orb orb-1" style="top: -100px; left: -100px;"></div>
+        <div class="orb orb-2" style="bottom: -80px; right: -80px;"></div>
         <div class="grid-overlay"></div>
       </div>
       <div class="blog-hero-content reveal">
         <span class="section-tag fira">Thoughts &amp; Reflections</span>
         <h1 class="blog-hero-title">The Blog</h1>
-        <p class="blog-hero-sub">I write about development, personal growth, and the things I learn while building things on the internet.</p>
+        <p class="blog-hero-sub">
+          Notes from my journey through full stack development, practical tutorials, and lessons I'm learning while building on the web.
+        </p>
       </div>
-    </div>
+    </header>
 
-    <!-- Blog posts -->
-    <main class="blog-main">
-      <button class="blog-back" onclick="window.history.back()"><i class="fa-solid fa-arrow-left"></i> Back</button>
+    <main class="blog-main" id="main-content">
+      <a class="blog-back" href="index.html#blog"><i class="fa-solid fa-arrow-left"></i> Back to portfolio</a>
+      <p class="blog-lede">
+        This page collects writing about React, Node.js, REST APIs, and the habits that help me keep improving as a developer. Each post is written to be practical, beginner-friendly, and grounded in what I have learned by building real projects.
+      </p>
 
-      <!-- Filter buttons -->
-      <div class="blog-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Posts</button>
-        <button class="filter-btn" data-filter="development">Development</button>
-        <button class="filter-btn" data-filter="personal">Personal</button>
-        <button class="filter-btn" data-filter="tutorial">Tutorial</button>
-      </div>
+      <nav class="blog-filters reveal" aria-label="Blog categories">
+        <button class="filter-btn active" data-filter="all" type="button">All Posts</button>
+        <button class="filter-btn" data-filter="development" type="button">Development</button>
+        <button class="filter-btn" data-filter="personal" type="button">Personal</button>
+        <button class="filter-btn" data-filter="tutorial" type="button">Tutorial</button>
+      </nav>
 
       <div class="blog-full-grid">
-
-        <!-- Featured / large post -->
-        <article class="blog-card featured reveal" tabindex="0" role="link" data-href="blog/building-first-fullstack-app.html" data-category="development">
-          <div class="blog-img-wrap">
-            <div class="blog-cover cover-1"><i class="fa-brands fa-node-js"></i></div>
-            <div class="blog-category">Development</div>
-          </div>
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="blog-date"><i class="fa-regular fa-calendar"></i> Dec 2024</span>
-              <span class="blog-read"><i class="fa-regular fa-clock"></i> 6 min read</span>
+        <article class="blog-card featured reveal" data-category="development">
+          <a class="blog-card-link" href="blog/building-first-fullstack-app.html" aria-label="Read Building My First Full Stack App with Node.js and React">
+            <div class="blog-img-wrap">
+              <div class="blog-cover cover-1"><i class="fa-brands fa-node-js"></i></div>
+              <div class="blog-category">Development</div>
             </div>
-            <h3>Building My First Full Stack App with Node.js &amp; React</h3>
-            <p>Walking through the journey of combining a Node.js/Express backend with a React frontend — the lessons learned and what I'd do differently. This was one of the most challenging but rewarding experiences of my development journey.</p>
-            <div class="blog-footer">
-              <div class="blog-tags"><span>Node.js</span><span>React</span><span>Express</span></div>
-              <span class="blog-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"><i class="fa-regular fa-calendar"></i> Dec 2024</span>
+                <span class="blog-read"><i class="fa-regular fa-clock"></i> 6 min read</span>
+              </div>
+              <h2>Building My First Full Stack App with Node.js &amp; React</h2>
+              <p>Walking through the journey of combining a Node.js and Express backend with a React frontend, including the biggest lessons I learned and the parts I would approach differently next time.</p>
+              <div class="blog-footer">
+                <div class="blog-tags"><span>Node.js</span><span>React</span><span>Express</span></div>
+                <span class="blog-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
             </div>
-          </div>
+          </a>
         </article>
 
-        <article class="blog-card reveal" tabindex="0" role="link" data-href="blog/year-of-coding.html" data-category="personal">
-          <div class="blog-img-wrap">
-            <div class="blog-cover cover-2"><i class="fa-solid fa-brain"></i></div>
-            <div class="blog-category">Personal</div>
-          </div>
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="blog-date"><i class="fa-regular fa-calendar"></i> Nov 2024</span>
-              <span class="blog-read"><i class="fa-regular fa-clock"></i> 4 min read</span>
+        <article class="blog-card reveal" data-category="personal">
+          <a class="blog-card-link" href="blog/year-of-coding.html" aria-label="Read What I Have Learned After a Year of Coding Seriously">
+            <div class="blog-img-wrap">
+              <div class="blog-cover cover-2"><i class="fa-solid fa-brain"></i></div>
+              <div class="blog-category">Personal</div>
             </div>
-            <h3>What I've Learned After a Year of Coding Seriously</h3>
-            <p>Reflecting on the habits, mindsets, and hard truths that came from deliberate practice.</p>
-            <div class="blog-footer">
-              <div class="blog-tags"><span>Personal</span><span>Growth</span></div>
-              <span class="blog-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"><i class="fa-regular fa-calendar"></i> Nov 2024</span>
+                <span class="blog-read"><i class="fa-regular fa-clock"></i> 4 min read</span>
+              </div>
+              <h2>What I've Learned After a Year of Coding Seriously</h2>
+              <p>A reflection on consistency, frustration, patience, and the habits that made the biggest difference once I started treating learning like deliberate practice.</p>
+              <div class="blog-footer">
+                <div class="blog-tags"><span>Personal</span><span>Growth</span></div>
+                <span class="blog-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
             </div>
-          </div>
+          </a>
         </article>
 
-        <article class="blog-card reveal" tabindex="0" role="link" data-href="blog/understanding-rest-apis.html" data-category="tutorial">
-          <div class="blog-img-wrap">
-            <div class="blog-cover cover-3"><i class="fa-solid fa-plug"></i></div>
-            <div class="blog-category">Tutorial</div>
-          </div>
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="blog-date"><i class="fa-regular fa-calendar"></i> Oct 2024</span>
-              <span class="blog-read"><i class="fa-regular fa-clock"></i> 8 min read</span>
+        <article class="blog-card reveal" data-category="tutorial">
+          <a class="blog-card-link" href="blog/understanding-rest-apis.html" aria-label="Read Understanding REST APIs: A Practical Developer's Guide">
+            <div class="blog-img-wrap">
+              <div class="blog-cover cover-3"><i class="fa-solid fa-plug"></i></div>
+              <div class="blog-category">Tutorial</div>
             </div>
-            <h3>Understanding REST APIs: A Practical Developer's Guide</h3>
-            <p>Breaking down what REST APIs really are and how to design ones that developers love using.</p>
-            <div class="blog-footer">
-              <div class="blog-tags"><span>API</span><span>Tutorial</span></div>
-              <span class="blog-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"><i class="fa-regular fa-calendar"></i> Oct 2024</span>
+                <span class="blog-read"><i class="fa-regular fa-clock"></i> 8 min read</span>
+              </div>
+              <h2>Understanding REST APIs: A Practical Developer's Guide</h2>
+              <p>A practical explanation of what REST APIs are, how endpoints and HTTP methods work together, and how to think about designing interfaces that developers actually enjoy using.</p>
+              <div class="blog-footer">
+                <div class="blog-tags"><span>API</span><span>Tutorial</span></div>
+                <span class="blog-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
             </div>
-          </div>
+          </a>
         </article>
-
-        <!-- Placeholder for more posts — remove/replace as needed -->
-        <article class="blog-card reveal" style="opacity:.5;pointer-events:none;" data-category="">
-          <div class="blog-img-wrap">
-            <div class="blog-cover" style="background:linear-gradient(135deg,var(--surface),var(--surface-2));height:160px;"></div>
-          </div>
-          <div class="blog-content">
-            <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Coming soon</span></div>
-            <h3 style="color:var(--text-faint);">Next post loading…</h3>
-            <p>More words from me are on the way. Stay tuned.</p>
-          </div>
-        </article>
-
       </div>
+
+      <p class="blog-note">More writing is on the way as new projects and lessons stack up.</p>
     </main>
 
     <footer>
@@ -192,62 +342,107 @@
     </footer>
 
     <script>
-      // Theme
       const themeToggle = document.getElementById("themeToggle");
-      const themeIcon   = document.getElementById("themeIcon");
-      const html        = document.documentElement;
-      function applyTheme(t) {
-        html.setAttribute("data-theme",t); localStorage.setItem("tm-theme",t);
-        themeIcon.className = t === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+      const themeIcon = document.getElementById("themeIcon");
+      const html = document.documentElement;
+
+      function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        localStorage.setItem("tm-theme", theme);
+        themeIcon.className = theme === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
       }
-      const saved = localStorage.getItem("tm-theme") || (window.matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");
-      applyTheme(saved);
-      themeToggle?.addEventListener("click",()=>applyTheme(html.getAttribute("data-theme")==="dark"?"light":"dark"));
 
-      // Hamburger
-      const menuIcon=document.getElementById("menuIcon"),navLinks=document.getElementById("navLinks"),navBackdrop=document.getElementById("navBackdrop");
-      function closeNav(){navLinks?.classList.remove("active");navBackdrop?.classList.remove("active");menuIcon?.classList.remove("open");}
-      menuIcon?.addEventListener("click",()=>{const o=navLinks?.classList.contains("active");o?closeNav():(navLinks?.classList.add("active"),navBackdrop?.classList.add("active"),menuIcon?.classList.add("open"));});
-      navBackdrop?.addEventListener("click",closeNav);
-      window.addEventListener("scroll",closeNav,{passive:true});
-
-      // Sticky header
-      const hdr=document.getElementById("mainHeader");
-      window.addEventListener("scroll",()=>hdr?.classList.toggle("scrolled",window.scrollY>60),{passive:true});
-
-      // Scroll progress
-      const sp=document.getElementById("scrollProgress");
-      window.addEventListener("scroll",()=>{const s=document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight;if(sp)sp.style.width=(s/t*100)+"%";},{passive:true});
-
-      // Reveal
-      const ro=new IntersectionObserver((e)=>{e.forEach(en=>{if(!en.isIntersecting)return;const s=Array.from(en.target.parentElement.querySelectorAll(".reveal")),i=s.indexOf(en.target);setTimeout(()=>en.target.classList.add("visible"),i*90);ro.unobserve(en.target);});},{threshold:.1,rootMargin:"0px 0px -40px 0px"});
-      document.querySelectorAll(".reveal").forEach(el=>ro.observe(el));
-
-      // Blog card nav
-      document.querySelectorAll(".blog-card[data-href]").forEach(c=>{
-        c.addEventListener("click",()=>window.location.href=c.dataset.href);
-        c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();window.location.href=c.dataset.href;}});
+      const savedTheme = localStorage.getItem("tm-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(savedTheme);
+      themeToggle?.addEventListener("click", () => {
+        applyTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
       });
 
-      // Filters
-      document.querySelectorAll(".filter-btn").forEach(btn=>{
-        btn.addEventListener("click",()=>{
-          document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
-          btn.classList.add("active");
-          const filter=btn.dataset.filter;
-          document.querySelectorAll(".blog-card[data-category]").forEach(card=>{
-            if(filter==="all"||card.dataset.category===filter){card.style.display="";}
-            else{card.style.display="none";}
+      const menuIcon = document.getElementById("menuIcon");
+      const navLinks = document.getElementById("navLinks");
+      const navBackdrop = document.getElementById("navBackdrop");
+
+      function closeNav() {
+        navLinks?.classList.remove("active");
+        navBackdrop?.classList.remove("active");
+        menuIcon?.classList.remove("open");
+        menuIcon?.setAttribute("aria-expanded", "false");
+      }
+
+      menuIcon?.addEventListener("click", () => {
+        const isOpen = navLinks?.classList.contains("active");
+        if (isOpen) {
+          closeNav();
+        } else {
+          navLinks?.classList.add("active");
+          navBackdrop?.classList.add("active");
+          menuIcon?.classList.add("open");
+          menuIcon?.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      navBackdrop?.addEventListener("click", closeNav);
+      window.addEventListener("scroll", closeNav, { passive: true });
+
+      const header = document.getElementById("mainHeader");
+      window.addEventListener("scroll", () => {
+        header?.classList.toggle("scrolled", window.scrollY > 60);
+      }, { passive: true });
+
+      const scrollProgress = document.getElementById("scrollProgress");
+      window.addEventListener("scroll", () => {
+        const scrolled = document.documentElement.scrollTop;
+        const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (scrollProgress) {
+          scrollProgress.style.width = (scrolled / total * 100) + "%";
+        }
+      }, { passive: true });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const siblings = Array.from(entry.target.parentElement.querySelectorAll(".reveal"));
+          const index = siblings.indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add("visible"), index * 90);
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+      document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+      document.querySelectorAll(".filter-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".filter-btn").forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          const filter = button.dataset.filter;
+          document.querySelectorAll(".blog-card[data-category]").forEach((card) => {
+            card.style.display = filter === "all" || card.dataset.category === filter ? "" : "none";
           });
         });
       });
 
-      // Cursor
-      const cursor=document.getElementById("cursor"),follower=document.getElementById("cursorFollower");
-      if(cursor&&follower&&!window.matchMedia("(max-width:900px)").matches){
-        let mx=0,my=0,fx=0,fy=0;
-        document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+"px";cursor.style.top=my+"px";});
-        (function af(){fx+=(mx-fx)*.13;fy+=(my-fy)*.13;follower.style.left=fx+"px";follower.style.top=fy+"px";requestAnimationFrame(af);})();
+      const cursor = document.getElementById("cursor");
+      const follower = document.getElementById("cursorFollower");
+      if (cursor && follower && !window.matchMedia("(max-width:900px)").matches) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        document.addEventListener("mousemove", (event) => {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+          cursor.style.left = mouseX + "px";
+          cursor.style.top = mouseY + "px";
+        });
+
+        (function animateFollower() {
+          followerX += (mouseX - followerX) * 0.13;
+          followerY += (mouseY - followerY) * 0.13;
+          follower.style.left = followerX + "px";
+          follower.style.top = followerY + "px";
+          requestAnimationFrame(animateFollower);
+        })();
       }
     </script>
   </body>

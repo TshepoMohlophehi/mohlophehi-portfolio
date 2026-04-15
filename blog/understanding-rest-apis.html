@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding REST APIs: A Practical Developer's Guide | Tshepo Mohlophehi</title>
+    <meta name="description" content="A beginner-friendly guide to REST APIs, covering resources, endpoints, HTTP methods, status codes, and practical design tips." />
+    <meta name="author" content="Tshepo Mohlophehi" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://tshepomohlophehi.co.za/blog/understanding-rest-apis.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Tshepo Mohlophehi Portfolio" />
+    <meta property="og:url" content="https://tshepomohlophehi.co.za/blog/understanding-rest-apis.html" />
+    <meta property="og:title" content="Understanding REST APIs: A Practical Developer's Guide" />
+    <meta property="og:description" content="A practical introduction to REST APIs for developers who want to understand endpoints, HTTP methods, and good API design." />
+    <meta property="og:image" content="https://tshepomohlophehi.co.za/assets/images/ProfileImage3.jpg" />
+    <meta property="og:image:alt" content="Portrait of Tshepo Mohlophehi" />
+    <meta property="og:locale" content="en_ZA" />
+    <meta property="article:section" content="Tutorial" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Understanding REST APIs: A Practical Developer's Guide" />
+    <meta name="twitter:description" content="A beginner-friendly walkthrough of REST APIs, HTTP verbs, resources, and real-world API design." />
+    <meta name="twitter:image" content="https://tshepomohlophehi.co.za/assets/images/ProfileImage3.jpg" />
+    <meta name="twitter:image:alt" content="Portrait of Tshepo Mohlophehi" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://tshepomohlophehi.co.za/blog/understanding-rest-apis.html#post",
+            "headline": "Understanding REST APIs: A Practical Developer's Guide",
+            "description": "A beginner-friendly guide to REST APIs, covering resources, endpoints, HTTP methods, status codes, and practical design tips.",
+            "author": {
+              "@type": "Person",
+              "name": "Tshepo Mohlophehi",
+              "url": "https://tshepomohlophehi.co.za/"
+            },
+            "url": "https://tshepomohlophehi.co.za/blog/understanding-rest-apis.html",
+            "mainEntityOfPage": "https://tshepomohlophehi.co.za/blog/understanding-rest-apis.html",
+            "articleSection": "Tutorial",
+            "keywords": [
+              "REST APIs",
+              "HTTP methods",
+              "Backend development",
+              "API design"
+            ],
+            "inLanguage": "en-ZA",
+            "isPartOf": {
+              "@type": "Blog",
+              "name": "Tshepo Mohlophehi Blog",
+              "url": "https://tshepomohlophehi.co.za/blog.html"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tshepomohlophehi.co.za/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://tshepomohlophehi.co.za/blog.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Understanding REST APIs: A Practical Developer's Guide",
+                "item": "https://tshepomohlophehi.co.za/blog/understanding-rest-apis.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" />
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#0b1020" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/styles/stylesheet.css" />
+    <link rel="stylesheet" href="../assets/styles/article.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <header class="header" id="mainHeader">
+      <a href="../index.html" class="logo"><span>TM.</span></a>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../blog.html" class="active" aria-current="page">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="toggle-track"><span class="toggle-thumb"><i class="fa-solid fa-moon" id="themeIcon"></i></span></span>
+        </button>
+        <a href="https://github.com/TshepoMohlophehi" target="_blank" rel="noopener" class="visit-btn">GitHub &nbsp;<i class="fa-brands fa-github"></i></a>
+        <button class="hamburger" id="menuIcon" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <header class="post-page-hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1" style="top: -120px; left: -120px;"></div>
+        <div class="orb orb-2" style="right: -100px; bottom: -100px;"></div>
+        <div class="grid-overlay"></div>
+      </div>
+      <div class="post-hero-content">
+        <div class="post-meta fira">
+          <span><i class="fa-regular fa-calendar"></i> <time datetime="2024-10">Oct 2024</time></span>
+          <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+          <span><i class="fa-solid fa-plug"></i> Tutorial</span>
+        </div>
+        <h1 class="post-title">Understanding REST APIs: A Practical Developer's Guide</h1>
+        <p class="post-dek">
+          REST APIs can sound more complicated than they really are. At their core, they are simply a structured way for one part of an application to ask another part for data, create something new, or update what already exists.
+        </p>
+      </div>
+    </header>
+
+    <main class="post-main" id="main-content">
+      <a class="back-link" href="../blog.html"><i class="fa-solid fa-arrow-left"></i> Back to all posts</a>
+
+      <div class="post-grid">
+        <article class="post-content">
+          <div class="tag-list">
+            <span>REST</span>
+            <span>HTTP</span>
+            <span>APIs</span>
+            <span>Backend</span>
+          </div>
+
+          <div class="prose">
+            <h2>Start with resources, not routes</h2>
+            <p>
+              A helpful way to think about REST is to focus on resources. Instead of beginning with actions like <code>getUsers</code> or <code>createPost</code>, think about the things your application manages: users, posts, messages, products, or tasks. RESTful routes usually describe those resources with nouns rather than verbs.
+            </p>
+            <p>
+              That is why an endpoint such as <code>/users</code> makes more sense than something like <code>/getUsers</code>. The HTTP method already communicates the action. The route communicates what the action applies to.
+            </p>
+
+            <div class="callout">
+              <strong>Simple rule:</strong> let the URL describe the resource, and let the HTTP method describe the operation.
+            </div>
+
+            <h2>What the common HTTP methods mean</h2>
+            <p>
+              Once you understand the role of resources, the main methods start to feel straightforward. <code>GET</code> is for reading data. <code>POST</code> is for creating new data. <code>PUT</code> and <code>PATCH</code> are both used for updates, with <code>PATCH</code> often representing partial updates. <code>DELETE</code> removes something.
+            </p>
+            <p>
+              In practice, you might use <code>GET /projects</code> to fetch a list of projects, <code>POST /projects</code> to create one, and <code>DELETE /projects/7</code> to remove a specific project. The pattern becomes predictable, and that predictability is part of what makes an API pleasant to work with.
+            </p>
+
+            <h2>Status codes are part of the conversation</h2>
+            <p>
+              Good APIs do more than return JSON. They also use HTTP status codes to explain what happened. A <code>200</code> means the request succeeded. A <code>201</code> usually means something was created. A <code>400</code> signals a bad request. A <code>404</code> means the resource was not found. A <code>500</code> means something went wrong on the server.
+            </p>
+            <p>
+              These codes matter because the frontend uses them to decide how to respond. When the backend is deliberate about status codes, the UI can show better feedback, recover more gracefully, and stay easier to debug.
+            </p>
+
+            <h2>Designing an API that is easier to use</h2>
+            <p>
+              Consistency makes a huge difference. If one endpoint returns an object inside a <code>data</code> property and another returns a raw array, the frontend becomes harder to reason about. If one route uses plural nouns and another uses singular ones, the API feels uneven. These are small decisions, but together they shape the developer experience.
+            </p>
+            <p>
+              Helpful APIs are also clear about errors. Instead of returning vague responses, they explain what failed and why. That might be missing input, invalid data, or an authorization problem. Clear error messages save time and reduce guesswork on both sides of the stack.
+            </p>
+
+            <h2>How REST thinking changes frontend work</h2>
+            <p>
+              Learning REST made my frontend code better too. It encouraged me to separate concerns more clearly, write smaller request helpers, and think about loading, success, and failure states as part of normal application flow. Once you understand what the API promises, the UI becomes easier to organize around those promises.
+            </p>
+            <p>
+              It also becomes easier to spot where a bug actually lives. Is the request wrong? Is the response shape inconsistent? Is the frontend assuming data that the backend never guaranteed? REST does not remove bugs, but it gives you a clearer language for finding them.
+            </p>
+
+            <h2>Why it is worth learning well</h2>
+            <p>
+              REST APIs show up in personal projects, production apps, third-party integrations, and team workflows. Understanding them well makes you more effective whether you are working mainly on the frontend, mainly on the backend, or across both. It is one of those skills that keeps paying off because so many modern applications depend on it.
+            </p>
+            <p>
+              The goal is not to memorize every detail. It is to build a reliable mental model: resources, methods, status codes, and consistency. Once that foundation is in place, the rest of API work becomes much easier to grow into.
+            </p>
+
+            <div class="post-footer-links">
+              <a href="../index.html#projects"><i class="fa-solid fa-arrow-right"></i> See how I build</a>
+              <a href="../index.html#contact"><i class="fa-regular fa-envelope"></i> Contact me</a>
+            </div>
+          </div>
+        </article>
+
+        <aside class="post-sidebar">
+          <div class="post-card">
+            <h2>In plain language</h2>
+            <ul>
+              <li>Resources are the nouns in your API</li>
+              <li>HTTP methods describe the action</li>
+              <li>Status codes help the frontend react properly</li>
+              <li>Consistency improves developer experience</li>
+            </ul>
+          </div>
+
+          <div class="post-card">
+            <h2>Keep reading</h2>
+            <p>More from the blog:</p>
+            <div class="post-actions">
+              <a href="building-first-fullstack-app.html">Building My First Full Stack App with Node.js &amp; React</a>
+              <a href="year-of-coding.html">What I've Learned After a Year of Coding Seriously</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <a href="../index.html" class="footer-logo">Tshepo Mohlophehi<span class="dot-accent">.</span></a>
+        <ul class="footer-nav">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <p class="copyright"><script>document.write(new Date().getFullYear());</script> &copy; Tshepo Mohlophehi</p>
+      </div>
+    </footer>
+
+    <script>
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const html = document.documentElement;
+
+      function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        localStorage.setItem("tm-theme", theme);
+        themeIcon.className = theme === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+      }
+
+      const savedTheme = localStorage.getItem("tm-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      applyTheme(savedTheme);
+      themeToggle?.addEventListener("click", () => {
+        applyTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      });
+
+      const menuIcon = document.getElementById("menuIcon");
+      const navLinks = document.getElementById("navLinks");
+      const navBackdrop = document.getElementById("navBackdrop");
+
+      function closeNav() {
+        navLinks?.classList.remove("active");
+        navBackdrop?.classList.remove("active");
+        menuIcon?.classList.remove("open");
+        menuIcon?.setAttribute("aria-expanded", "false");
+      }
+
+      menuIcon?.addEventListener("click", () => {
+        const isOpen = navLinks?.classList.contains("active");
+        if (isOpen) {
+          closeNav();
+        } else {
+          navLinks?.classList.add("active");
+          navBackdrop?.classList.add("active");
+          menuIcon?.classList.add("open");
+          menuIcon?.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      navBackdrop?.addEventListener("click", closeNav);
+      window.addEventListener("scroll", closeNav, { passive: true });
+
+      const header = document.getElementById("mainHeader");
+      window.addEventListener("scroll", () => {
+        header?.classList.toggle("scrolled", window.scrollY > 60);
+      }, { passive: true });
+
+      const scrollProgress = document.getElementById("scrollProgress");
+      window.addEventListener("scroll", () => {
+        const scrolled = document.documentElement.scrollTop;
+        const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (scrollProgress) {
+          scrollProgress.style.width = (scrolled / total * 100) + "%";
+        }
+      }, { passive: true });
+
+      const cursor = document.getElementById("cursor");
+      const follower = document.getElementById("cursorFollower");
+      if (cursor && follower && !window.matchMedia("(max-width:900px)").matches) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        document.addEventListener("mousemove", (event) => {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+          cursor.style.left = mouseX + "px";
+          cursor.style.top = mouseY + "px";
+        });
+
+        (function animateFollower() {
+          followerX += (mouseX - followerX) * 0.13;
+          followerY += (mouseY - followerY) * 0.13;
+          follower.style.left = followerX + "px";
+          follower.style.top = followerY + "px";
+          requestAnimationFrame(animateFollower);
+        })();
+      }
+    </script>
+  </body>
+</html>

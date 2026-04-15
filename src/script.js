@@ -4,7 +4,7 @@
    CV PASSWORD — change the value below to your own password.
    It is stored encoded to avoid plain-text in source.
    Encode your password: btoa("yourPassword") in the browser console.
-   Current password decodes to: TshepoM@2025
+   Current password decodes to: 
    ============================================================ */
 
 const CV_PASS_HASH = "VHNoZXBvTUAyMDI1"; // Change me — base64 of your password
